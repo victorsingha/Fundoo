@@ -1,0 +1,125 @@
+.main {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 20% 60% 20%;
+  //   grid-template-areas:
+  //     "header header header header header header"
+  //     "menu main main main right right"
+  //     "menu footer footer footer footer footer";
+}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.4em 0px !important;
+}
+::ng-deep .mat-form-field-label-wrapper {
+  top: -1.5em;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  transform: translateY(-1.1em) scale(0.75);
+  width: 133.33333%;
+}
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.logo {
+  grid-area: logo;
+  margin-bottom: 10px;
+  font-family: "Yellowtail", cursive;
+  color: #673ab7;
+}
+.firstname {
+  grid-area: firstname;
+}
+.lastname {
+  grid-area: lastname;
+}
+.email {
+  grid-area: email;
+  margin-bottom: 20px;
+}
+.password {
+  grid-area: password;
+}
+.confirmpassword {
+  grid-area: cpassword;
+}
+.login {
+  grid-area: login;
+  height: 40px;
+  border: none;
+  margin-right: 40px;
+}
+.register {
+  margin-left: 50px;
+  grid-area: register;
+  height: 40px;
+}
+.register:hover {
+  background-color: #481d94;
+}
+.image {
+  grid-area: image;
+}
+.tag {
+  font-family: "Montserrat", sans-serif;
+  grid-area: tag;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.container {
+  height: 100%;
+  display: grid;
+  grid-column-gap: 20px;
+  //   background-color: aquamarine;
+  grid-template-areas:
+    ". . image"
+    "logo logo image"
+    "tag tag image"
+    "firstname lastname image"
+    "email email image"
+    "password cpassword image"
+    ". . image"
+    ". . image"
+    "login register image"
+    ". . image"
+    ". . image";
+}
+
+@media screen and (max-width: 1080px) {
+  .main {
+    grid-template-columns: 10% 80% 10%;
+  }
+}
+@media screen and (max-width: 873px) {
+  .main {
+    grid-template-columns: 3% 94% 3%;
+  }
+}
+@media screen and (max-width: 440px) {
+  .main {
+    grid-template-columns: 3% 94% 3%;
+  }
+  .image {
+    display: none;
+  }
+  .container {
+    height: auto;
+    grid-template-areas:
+      "logo"
+      "tag"
+      "firstname"
+      "lastname"
+      "email"
+      "password"
+      "cpassword"
+      "register"
+      "login";
+  }
+  .register {
+    margin-bottom: 10px;
+  }
+}
