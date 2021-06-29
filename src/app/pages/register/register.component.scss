@@ -25,10 +25,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 .logo {
+  font-size: large;
   grid-area: logo;
   margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  color: #3b82f6;
+}
+.fun,
+.doo {
   font-family: "Yellowtail", cursive;
-  color: #673ab7;
+  font-size: xx-large;
+}
+.x {
+  font-size: xx-large;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .firstname {
   grid-area: firstname;
@@ -50,18 +61,29 @@
   grid-area: login;
   height: 40px;
   border: none;
-  margin-right: 40px;
+  margin-right: 60px;
+  color: #3b82f6;
+}
+.login:hover {
+  background-color: #dbeafe;
 }
 .register {
-  margin-left: 50px;
+  margin-left: 60px;
   grid-area: register;
   height: 40px;
+  background-color: #3b82f6;
 }
 .register:hover {
-  background-color: #481d94;
+  background-color: #1d4ed8;
 }
 .image {
   grid-area: image;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 500px;
 }
 .tag {
   font-family: "Montserrat", sans-serif;
@@ -70,9 +92,13 @@
   font-size: 20px;
   font-weight: 400;
 }
+p {
+  opacity: 45%;
+}
 .container {
   height: 100%;
   display: grid;
+
   grid-column-gap: 20px;
   //   background-color: aquamarine;
   grid-template-areas:
@@ -88,7 +114,15 @@
     ". . image"
     ". . image";
 }
-
+@media screen and (min-width: 924px) {
+  .container {
+    border-style: solid;
+    border-color: #d1d5db;
+    border-radius: 10px;
+    border-width: 1px;
+    padding-left: 30px;
+  }
+}
 @media screen and (max-width: 1080px) {
   .main {
     grid-template-columns: 10% 80% 10%;
