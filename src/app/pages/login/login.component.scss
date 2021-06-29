@@ -20,6 +20,8 @@
     width: 500px;
 
     .logo {
+      display: flex;
+      align-items: center;
       font-size: large;
       grid-area: logo;
       font-family: "Montserrat", sans-serif;
