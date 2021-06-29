@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: #d1d5db;
+    border-radius: 10px;
+    border-width: 1px;
+    height: 80%;
+    width: 500px;
+
+    .logo {
+      font-size: large;
+      grid-area: logo;
+      font-family: "Montserrat", sans-serif;
+      color: #3b82f6;
+      margin-bottom: 20px;
+    }
+    .fun,
+    .doo {
+      font-family: "Yellowtail", cursive;
+      font-size: xx-large;
+    }
+    .x {
+      font-size: xx-large;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .signintag {
+      font-weight: 400;
+      font-size: x-large;
+      margin-bottom: 10px;
+    }
+    .continue {
+      font-size: large;
+      margin-bottom: 20px;
+    }
+    mat-form-field {
+      width: 80%;
+    }
+    .forgot {
+      width: 80%;
+      display: flex;
+      color: #3b82f6;
+      margin-bottom: 20px;
+      p {
+        font-weight: 500;
+      }
+      p:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+    button {
+      border-style: none;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    .register {
+      color: #3b82f6;
+    }
+    .register:hover {
+      background-color: #dbeafe;
+    }
+    .login {
+      background-color: #3b82f6;
+    }
+    .login:hover {
+      background-color: #1d4ed8;
+    }
+    .comment {
+      opacity: 60%;
+      font-family: "Montserrat", sans-serif;
+    }
+    .buttons {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .main {
+    .container {
+      border-style: none;
+      mat-form-field {
+        width: 90%;
+      }
+      .buttons {
+        width: 90%;
+      }
+      .forgot {
+        width: 90%;
+      }
+    }
+  }
+}
