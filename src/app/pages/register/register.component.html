@@ -34,10 +34,22 @@
         <mat-label>Confirm Password</mat-label>
         <input matInput placeholder="" />
       </mat-form-field>
-      <button class="login" mat-stroked-button color="primary">
+      <button
+        (click)="btnSignin()"
+        class="login"
+        mat-stroked-button
+        color="primary"
+      >
         Sign in instead
       </button>
-      <button class="register" mat-flat-button color="primary">Register</button>
+      <button
+        (click)="btnRegister()"
+        class="register"
+        mat-flat-button
+        color="primary"
+      >
+        Register
+      </button>
       <div class="image">
         <img
           src="https://ssl.gstatic.com/accounts/signup/glif/account.svg"

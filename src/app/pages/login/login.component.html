@@ -21,12 +21,17 @@
       <input matInput placeholder="" />
     </mat-form-field>
     <div class="forgot">
-      <p>Forgot password</p>
+      <p (click)="btnForgotPassword()">Forgot password</p>
     </div>
     <p class="comment">Don't have account yet?</p>
     <p class="comment">Create an account.</p>
     <div class="buttons">
-      <button class="register" mat-stroked-button color="primary">
+      <button
+        (click)="btnCreateAccount()"
+        class="register"
+        mat-stroked-button
+        color="primary"
+      >
         Create account
       </button>
       <button class="login" mat-flat-button color="primary">Sign In</button>
