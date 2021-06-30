@@ -1,7 +1,7 @@
 <div class="main">
   <div></div>
   <div>
-    <form class="container">
+    <form class="container" [formGroup]="registerForm" name="registerForm">
       <h1 class="logo">
         <img
           style="width: 70px; margin-top: 11px"
@@ -14,15 +14,23 @@
       <p class="tag">Create Your Fundoo Account</p>
       <mat-form-field class="firstname" appearance="outline">
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="eg: johnathan" />
+        <input
+          matInput
+          placeholder="eg: johnathan"
+          formControlName="firstname"
+        />
       </mat-form-field>
       <mat-form-field class="lastname" appearance="outline">
         <mat-label>Last Name</mat-label>
-        <input matInput placeholder="eg: doe" />
+        <input matInput placeholder="eg: doe" formControlName="lastname" />
       </mat-form-field>
       <mat-form-field class="email" appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="eg: johnathan.doe@gmail.com" />
+        <input
+          matInput
+          placeholder="eg: johnathan.doe@gmail.com"
+          formControlName="email"
+        />
         <mat-hint>You can use letters, numbers & periods.</mat-hint>
       </mat-form-field>
       <mat-form-field class="password" appearance="outline">
@@ -43,7 +51,7 @@
           matInput
           placeholder=""
           [type]="hide ? 'password' : 'text'"
-          formControlName="password"
+          formControlName="confirmpassword"
         />
         <mat-icon matSuffix (click)="hide = !hide">{{
           hide ? "visibility_off" : "visibility"
