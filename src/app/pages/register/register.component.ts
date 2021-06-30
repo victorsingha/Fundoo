@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   };
   btnRegister(){
     // this.router.navigateByUrl('/login');
+    console.log(this.registerForm.value)
   }
   
   ngOnInit(): void {
@@ -28,7 +29,7 @@ export class RegisterComponent implements OnInit {
     confirmpassword: new FormControl('', [Validators.required, Validators.min(3)]),
   });
   hide = true;
-  get emailInput() { return this.registerForm.get('email'); }
-  get passwordInput() { return this.registerForm.get('password'); }
+  // get emailInput() { return this.registerForm.get('email'); }
+  // get passwordInput() { return this.registerForm.get('password'); }
 
 }

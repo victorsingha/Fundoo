@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,9 +13,13 @@ export class ForgotpasswordComponent implements OnInit {
   btnBack(){
     this.router.navigateByUrl('/login');
   }
-  
+  btnSubmit(){
+    console.log(this.forgotPasswordForm.value)
+  }
 
   ngOnInit(): void {
   }
-
+  forgotPasswordForm: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.email, Validators.required]),
+  });
 }

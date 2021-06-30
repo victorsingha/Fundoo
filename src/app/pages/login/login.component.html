@@ -1,5 +1,5 @@
 <div class="main">
-  <form class="container">
+  <form class="container" [formGroup]="loginForm" name="loginForm">
     <h1 class="logo">
       <img
         style="width: 70px; margin-top: 11px"
@@ -13,11 +13,17 @@
     <p class="continue">Continue to Fundoo</p>
     <mat-form-field class="email" appearance="outline">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="eg: johnathan.doe@gmail.com" />
+      <input
+        matInput
+        placeholder="eg: johnathan.doe@gmail.com"
+        formControlName="email"
+      />
+      <mat-error>required*</mat-error>
     </mat-form-field>
     <mat-form-field class="password" appearance="outline">
       <mat-label>Password</mat-label>
-      <input matInput placeholder="" />
+      <input matInput placeholder="" formControlName="password" />
+      <mat-error>required*</mat-error>
     </mat-form-field>
     <div class="forgot">
       <p (click)="btnForgotPassword()">Forgot password</p>
@@ -33,7 +39,14 @@
       >
         Create account
       </button>
-      <button class="login" mat-flat-button color="primary">Sign In</button>
+      <button
+        class="login"
+        mat-flat-button
+        color="primary"
+        (click)="btnLogin()"
+      >
+        Sign In
+      </button>
     </div>
   </form>
 </div>
