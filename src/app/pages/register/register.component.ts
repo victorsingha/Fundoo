@@ -15,7 +15,13 @@ export class RegisterComponent implements OnInit {
   };
   btnRegister(){
     // this.router.navigateByUrl('/login');
-    console.log(this.registerForm.value)
+    // console.log(this.registerForm.value)
+    console.log(`isInputsEmpty: ${this.isInputsEmpty()}`)
+    console.log(`isPasswordSame: ${this.isPasswordSame()}`)
+    if(!this.isInputsEmpty() && this.isPasswordSame()){
+      console.log("POST")
+      // TODO 
+    }
   }
   
   ngOnInit(): void {
@@ -31,5 +37,20 @@ export class RegisterComponent implements OnInit {
   hide = true;
   // get emailInput() { return this.registerForm.get('email'); }
   // get passwordInput() { return this.registerForm.get('password'); }
+  isInputsEmpty(){
+    if(this.registerForm.value.firstname && 
+       this.registerForm.value.lastname && 
+       this.registerForm.value.email &&
+       this.registerForm.value.password &&
+       this.registerForm.value.confirmpassword != "")
+      {
+        return false;
+      }
+      return true;
+  }
+  isPasswordSame(){
+    if(this.registerForm.value.password == this.registerForm.value.confirmpassword) return true;
+    return false;
+  }
 
 }
