@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   btnLogin(){
     // console.log(this.loginForm.value)
     // console.log(`isInputsEmpty: ${this.isInputsEmpty()}`)
-    if(this.loginForm.valid && !this.isInputsEmpty()){
+    if(this.loginForm.valid){
         console.log("POST")  
     }
     
@@ -30,17 +30,6 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
-  }
-
-  isInputsEmpty(){
-    if(
-       this.loginForm.value.email &&
-       this.loginForm.value.password != ""
-      )
-      {
-        return false;
-      }
-      return true;
   }
 
 }

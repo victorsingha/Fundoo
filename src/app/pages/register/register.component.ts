@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
     // console.log(this.registerForm.value)
     // console.log(`isInputsEmpty: ${this.isInputsEmpty()}`)
     // console.log(`isPasswordSame: ${this.isPasswordSame()}`)
-    if(this.registerForm.valid && !this.isInputsEmpty() && this.isPasswordSame()){
+    if(this.registerForm.valid && this.isPasswordSame()){
       console.log("POST")
       // TODO 
     }
@@ -37,17 +37,6 @@ export class RegisterComponent implements OnInit {
   hide = true;
   // get emailInput() { return this.registerForm.get('email'); }
   // get passwordInput() { return this.registerForm.get('password'); }
-  isInputsEmpty(){
-    if(this.registerForm.value.firstname && 
-       this.registerForm.value.lastname && 
-       this.registerForm.value.email &&
-       this.registerForm.value.password &&
-       this.registerForm.value.confirmpassword != "")
-      {
-        return false;
-      }
-      return true;
-  }
   isPasswordSame(){
     if(this.registerForm.value.password == this.registerForm.value.confirmpassword) return true;
     return false;
