@@ -16,9 +16,9 @@ export class RegisterComponent implements OnInit {
   btnRegister(){
     // this.router.navigateByUrl('/login');
     // console.log(this.registerForm.value)
-    console.log(`isInputsEmpty: ${this.isInputsEmpty()}`)
-    console.log(`isPasswordSame: ${this.isPasswordSame()}`)
-    if(!this.isInputsEmpty() && this.isPasswordSame()){
+    // console.log(`isInputsEmpty: ${this.isInputsEmpty()}`)
+    // console.log(`isPasswordSame: ${this.isPasswordSame()}`)
+    if(this.registerForm.valid && !this.isInputsEmpty() && this.isPasswordSame()){
       console.log("POST")
       // TODO 
     }

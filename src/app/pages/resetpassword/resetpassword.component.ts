@@ -13,13 +13,20 @@ export class ResetpasswordComponent implements OnInit {
   ngOnInit(): void {
   }
   btnSubmit(){
-    console.log(this.resetpasswordForm.value)
-    this.router.navigateByUrl('/login');
+    // console.log(this.resetpasswordForm.value)
+    if(this.resetpasswordForm.valid && this.isPasswordSame()){
+      // POST
+      this.router.navigateByUrl('/login');
+    }
+    
   }
   resetpasswordForm: FormGroup = new FormGroup({
     password: new FormControl('', [Validators.required, Validators.min(3)]),
     confirmpassword: new FormControl('', [Validators.required, Validators.min(3)]),
   });
   hide = true;
-
+  isPasswordSame(){
+    if(this.resetpasswordForm.value.password == this.resetpasswordForm.value.confirmpassword) return true;
+    return false;
+  }
 }

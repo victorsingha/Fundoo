@@ -14,8 +14,12 @@ export class ForgotpasswordComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
   btnSubmit(){
-    console.log(this.forgotPasswordForm.value)
-    this.router.navigateByUrl('/resetpassword');
+    // console.log(this.forgotPasswordForm.value)
+    
+    if(this.forgotPasswordForm.valid){
+      // POST
+      this.router.navigateByUrl('/resetpassword');
+    }
   }
 
   ngOnInit(): void {
