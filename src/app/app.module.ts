@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResetpasswordComponent } from './pages/resetpassword/resetpassword.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -33,7 +34,8 @@ import { ResetpasswordComponent } from './pages/resetpassword/resetpassword.comp
     MatIconModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/UserService/user.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -8,19 +9,18 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private userservice: UserService) {}
 
   btnSignin() {
     this.router.navigateByUrl('/login');
   };
   btnRegister(){
     // this.router.navigateByUrl('/login');
-    // console.log(this.registerForm.value)
-    // console.log(`isInputsEmpty: ${this.isInputsEmpty()}`)
-    // console.log(`isPasswordSame: ${this.isPasswordSame()}`)
     if(this.registerForm.valid && this.isPasswordSame()){
       console.log("POST")
       // TODO 
+      this.userservice.registration(this.registerForm.value).subscribe(data=>{console.log(data)})
+    
     }
   }
   
