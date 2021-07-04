@@ -57,6 +57,7 @@
           [type]="hide ? 'password' : 'text'"
           formControlName="confirmpassword"
           [errorStateMatcher]="matcher"
+          name="confirmpassword"
         />
         <mat-error *ngIf="registerForm.hasError('notSame')"
           >password not match*</mat-error
