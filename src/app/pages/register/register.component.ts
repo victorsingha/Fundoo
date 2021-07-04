@@ -39,9 +39,9 @@ export class RegisterComponent implements OnInit {
 
   }
   registerForm = this.formBuilder.group({
-    firstname: new FormControl('', [Validators.required]),
-    lastname: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.email, Validators.required]),
+    firstname: new FormControl(null, [Validators.required]),
+    lastname: new FormControl(null, [Validators.required]),
+    email: new FormControl(null, [Validators.email, Validators.required]),
     password: new FormControl(null, [Validators.required, Validators.min(3)]),
     confirmpassword: new FormControl(null, [Validators.required, Validators.min(3)]),
   },{ validators: this.checkPasswords });
