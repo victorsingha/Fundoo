@@ -65,17 +65,17 @@ checkPasswords(control: AbstractControl): ValidationErrors | null { // here we h
   const pass = control.get('password')?.value;
   const confirmPass = control.get('confirmpassword')?.value;
 console.log(`pass=${pass} conpass=${confirmPass}`)
-          if (control.get('confirmPassword')?.errors) {
-            // return if another validator has already found an error on the matchingControl
-            return null;
-          }
-          if (pass !== confirmPass) {
-            control.get('confirmPassword')?.setErrors({ notSame: true });
+          // if (control.get('confirmPassword')?.errors) {
+          //   // return if another validator has already found an error on the matchingControl
+          //   return null;
+          // }
+          // if (pass !== confirmPass) {
+          //   control.get('confirmPassword')?.setErrors({ notSame: true });
           
-            } else {
-              control.get('confirmPassword')?.setErrors(null);
+          //   } else {
+          //     control.get('confirmPassword')?.setErrors(null);
              
-            }
+          //   }
   return pass === confirmPass ? null : { notSame: true }     
 }
   }
