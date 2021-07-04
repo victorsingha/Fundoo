@@ -56,8 +56,11 @@
           placeholder=""
           [type]="hide ? 'password' : 'text'"
           formControlName="confirmpassword"
+          [errorStateMatcher]="matcher"
         />
-        <mat-error>required*</mat-error>
+        <mat-error *ngIf="registerForm.hasError('notSame')"
+          >password not match*</mat-error
+        >
         <mat-icon matSuffix (click)="hide = !hide">{{
           hide ? "visibility_off" : "visibility"
         }}</mat-icon>
