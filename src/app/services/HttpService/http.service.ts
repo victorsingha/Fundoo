@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class HttpService {
 
   constructor(private http: HttpClient) { }
+
 
   post(url: string,data: any,isHeader: any = false,headers = null){
     return this.http.post(url,data,isHeader && headers);

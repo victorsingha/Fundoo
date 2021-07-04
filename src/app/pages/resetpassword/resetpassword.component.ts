@@ -1,6 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core/error/error-options';
 import { Router } from '@angular/router';
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const invalidCtrl = !!(control && control.invalid && control.parent?.dirty);
+    const invalidParent = !!(control && control.parent && control.parent.invalid && control.parent.dirty);
+
+    return (invalidCtrl || invalidParent);
+  }
+}
 
 @Component({
   selector: 'app-resetpassword',
@@ -8,49 +18,64 @@ import { Router } from '@angular/router';
   styleUrls: ['./resetpassword.component.scss']
 })
 export class ResetpasswordComponent implements OnInit {
-
-  constructor(private router: Router) {}
-  ngOnInit(): void {
+  matcher = new MyErrorStateMatcher();
+  
+  constructor(private router: Router,private formBuilder: FormBuilder) {
+  
   }
+ 
+  resetpasswordForm = this.formBuilder.group({
+    password: new FormControl(null, [Validators.required, Validators.min(3)]),
+    confirmpassword: new FormControl(null,[Validators.required, Validators.min(3)]),
+  }, 
+  { validators: this.checkPasswords }
+  );
   hide = true;
   btnSubmit(){
-    console.log(this.resetpasswordForm.controls)
-    // console.log(this.resetpasswordForm.value)
-    if(this.resetpasswordForm.valid && this.isPasswordSame()){
+    if(this.resetpasswordForm.valid){
       // POST
-      this.router.navigateByUrl('/login');
+      // this.router.navigateByUrl('/login');
+      console.log(this.resetpasswordForm.value,"yoooooooooooooo")
     }
     
   }
-  resetpasswordForm: FormGroup = new FormGroup({
-    password: new FormControl(null, [Validators.required, Validators.min(3)]),
-    confirmpassword: new FormControl(null, [Validators.required, Validators.min(3)]),
-  }
-  );
+ 
 
-  get f (){return this.resetpasswordForm.controls}
+  // get f (){return this.resetpasswordForm.controls}
+  ngOnInit(): void {}
+//   MustMatch(controlName: string, matchingControlName: string) {
+//     return (formGroup: FormGroup) => {
+//         const control = formGroup.controls[controlName];
+//         const matchingControl = formGroup.controls[matchingControlName];
 
-  MustMatch(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
-        const control = formGroup.controls[controlName];
-        const matchingControl = formGroup.controls[matchingControlName];
+//         if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+//             // return if another validator has already found an error on the matchingControl
+//             return;
+//         }
 
-        if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+//         // set error on matchingControl if validation fails
+//         if (control.value !== matchingControl.value) {
+//             matchingControl.setErrors({ mustMatch: true });
+//         } else {
+//             matchingControl.setErrors(null);
+//         }
+//     }
+// }
+checkPasswords(control: AbstractControl): ValidationErrors | null { // here we have the 'passwords' group
+  const pass = control.get('password')?.value;
+  const confirmPass = control.get('confirmpassword')?.value;
+console.log(`pass=${pass} conpass=${confirmPass}`)
+          if (control.get('confirmPassword')?.errors) {
             // return if another validator has already found an error on the matchingControl
-            return;
-        }
-
-        // set error on matchingControl if validation fails
-        if (control.value !== matchingControl.value) {
-            matchingControl.setErrors({ mustMatch: true });
-        } else {
-            matchingControl.setErrors(null);
-        }
-    }
+            return null;
+          }
+          if (pass !== confirmPass) {
+            control.get('confirmPassword')?.setErrors({ notSame: true });
+          
+            } else {
+              control.get('confirmPassword')?.setErrors(null);
+             
+            }
+  return pass === confirmPass ? null : { notSame: true }     
 }
-  isPasswordSame(){
-    if(this.resetpasswordForm.value.password == this.resetpasswordForm.value.confirmpassword)
-      return true;
-      return false;
-    }
   }
