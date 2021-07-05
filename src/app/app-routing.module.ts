@@ -4,9 +4,13 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './pages/resetpassword/resetpassword.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
-const routes: Routes = [{ path: '', component: RegisterComponent },
-{ path: 'login', component: LoginComponent, },
+const routes: Routes = [
+{ path: '', component: LoginComponent },
+{ path: 'register', component: RegisterComponent },
+{ path: 'login', component: LoginComponent },
+{ path: 'dashboard', component: DashboardComponent },
 { path: 'forgotpassword', component: ForgotpasswordComponent  },
 { path: 'resetpassword',component: ResetpasswordComponent}];
 

@@ -1,0 +1,52 @@
+<mat-toolbar>
+  <button mat-icon-button class="menu-button" (click)="toggleSidebar()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side" [opened]="opened"
+    ><div>
+      <button mat-icon-button>
+        <mat-icon>lightbulb_outline</mat-icon>
+      </button>
+      <p>Notes</p>
+    </div>
+    <div>
+      <button mat-icon-button>
+        <mat-icon>notifications_none</mat-icon>
+      </button>
+      <p>Reminder</p>
+    </div>
+    <div>
+      <button mat-icon-button>
+        <mat-icon>label_outline</mat-icon>
+      </button>
+
+      <p>snacks</p>
+    </div>
+    <div>
+      <button mat-icon-button>
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <p>Edit labels</p>
+    </div>
+    <div>
+      <button mat-icon-button>
+        <mat-icon>archive_outline</mat-icon>
+      </button>
+
+      <p>Archive</p>
+    </div>
+    <div>
+      <button mat-icon-button>
+        <mat-icon>delete_outline</mat-icon>
+      </button>
+
+      <p>Trash</p>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content> Main Content</mat-sidenav-content>
+</mat-sidenav-container>

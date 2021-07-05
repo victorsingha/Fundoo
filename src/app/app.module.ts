@@ -14,7 +14,9 @@ import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.c
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResetpasswordComponent } from './pages/resetpassword/resetpassword.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatSidenavModule } from '@angular/material/sidenav'
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     LoginComponent,
     ForgotpasswordComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

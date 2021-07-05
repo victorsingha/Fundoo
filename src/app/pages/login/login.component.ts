@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl('/forgotpassword');
   }
   btnCreateAccount(){
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/register');
     
   }
   httpOptions = {
@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   btnLogin(){
     if(this.loginForm.valid){ 
         //this.userservice.login(this.loginForm.value).subscribe(res=>{console.log(res)})
+        this.router.navigateByUrl('/dashboard');
         console.log(this.loginForm.value)
        
         // const headers= new HttpHeaders()
