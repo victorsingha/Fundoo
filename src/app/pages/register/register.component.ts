@@ -8,9 +8,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const invalidCtrl = !!(control && control.invalid && control.parent?.dirty);
     const invalidParent = !!(control && control.parent && control.parent.invalid && control.parent.dirty);
-    console.log("control invalid",control?.invalid)
-    console.log("parent dirty",control?.parent?.dirty)
-    console.log(form?.control.get('confirmpassword')?.value)
+    // console.log("control invalid",control?.invalid)
+    // console.log("parent dirty",control?.parent?.dirty)
+    // console.log(form?.control.get('confirmpassword')?.value)
+    console.log(form)
+    
     if(form?.control.get('confirmpassword')?.value == form?.control.get('password')?.value) return false;
     return (invalidCtrl || invalidParent);
   }
