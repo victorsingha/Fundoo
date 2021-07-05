@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { MatSidenavModule } from '@angular/material/sidenav'
     ReactiveFormsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

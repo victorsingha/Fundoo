@@ -62,9 +62,6 @@ mat-toolbar {
     }
   }
 }
-mat-sidenav-content {
-  background-color: white;
-}
 
 mat-sidenav-container {
   height: 100%;
@@ -87,4 +84,8 @@ mat-sidenav-container {
       cursor: pointer;
     }
   }
+}
+
+mat-sidenav-content {
+  background-color: white;
 }

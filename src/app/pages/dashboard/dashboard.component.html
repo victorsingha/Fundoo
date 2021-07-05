@@ -31,16 +31,18 @@
       <button mat-icon-button>
         <mat-icon>settings_outline</mat-icon>
       </button>
-      <button mat-icon-button>
+      <button mat-icon-button style="margin-left: 20px">
         <mat-icon>apps</mat-icon>
       </button>
       <img
         src="https://randomuser.me/api/portraits/men/97.jpg"
-        style="width: 40px; height: 40px; border-radius: 50%"
+        style="width: 40px; height: 40px; border-radius: 50%; margin-left: 5px"
         alt=""
       />
     </div>
   </mat-toolbar>
+
+  <mat-divider style="margin-bottom: 10px"></mat-divider>
 
   <mat-sidenav-container>
     <mat-sidenav mode="side" [opened]="opened">
