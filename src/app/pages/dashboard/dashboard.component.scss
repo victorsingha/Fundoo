@@ -2,12 +2,18 @@
   height: 100%;
   width: 100%;
 }
-
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
 mat-toolbar {
   background-color: white;
   display: flex;
   align-items: center;
-  .menu-button {
+  .search {
+    width: 50%;
+    border-style: none;
+  }
+  button {
     width: 50px;
     height: 50px;
   }
@@ -54,7 +60,8 @@ mat-sidenav-container {
       border-radius: 0px 30px 30px 0px;
     }
     div:hover {
-      background-color: rgb(212, 212, 212);
+      background-color: rgb(226, 226, 226);
+      cursor: pointer;
     }
   }
 }

@@ -1,6 +1,6 @@
 <div class="body">
   <mat-toolbar>
-    <button mat-icon-button class="menu-button" (click)="toggleSidebar()">
+    <button mat-icon-button (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
     </button>
     <div class="logo">
@@ -12,6 +12,10 @@
       <span style="color: black" class="x">X</span>
       <span class="fun">Fun</span><span class="doo">doo.</span>
     </div>
+    <mat-form-field appearance="fill" class="search">
+      <input matInput placeholder="search" />
+      <mat-icon matPrefix style="opacity: 80%">search</mat-icon>
+    </mat-form-field>
   </mat-toolbar>
 
   <mat-sidenav-container>
