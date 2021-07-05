@@ -1,22 +1,44 @@
 <div class="body">
   <mat-toolbar>
-    <button mat-icon-button (click)="toggleSidebar()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <div class="logo">
-      <img
-        style="width: 70px; margin-top: 4px"
-        src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-        alt=""
-      />
-      <span style="color: black" class="x">X</span>
-      <span class="fun">Fun</span><span class="doo">doo.</span>
+    <div class="one" style="display: flex">
+      <button mat-icon-button (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="logo">
+        <img
+          style="width: 70px; margin-top: 4px"
+          src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+          alt=""
+        />
+        <span style="color: black" class="x">X</span>
+        <span class="fun">Fun</span><span class="doo">doo.</span>
+      </div>
     </div>
+
     <div class="searchbar">
-      <button mat-icon-button style="opacity: 60%">
+      <button mat-icon-button>
         <mat-icon>search</mat-icon>
       </button>
       <input type="text" placeholder="Search" />
+    </div>
+    <div class="three" style="display: flex; align-items: center">
+      <button mat-icon-button>
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>view_stream</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>settings_outline</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>apps</mat-icon>
+      </button>
+      <img
+        src="https://randomuser.me/api/portraits/men/97.jpg"
+        style="width: 40px; height: 40px; border-radius: 50%"
+        alt=""
+      />
     </div>
   </mat-toolbar>
 

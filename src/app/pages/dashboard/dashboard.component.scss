@@ -1,17 +1,25 @@
 .body {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
 }
+mat-icon {
+  opacity: 70%;
+}
+button:hover {
+  background-color: rgb(226, 226, 226);
+}
 
 mat-toolbar {
   background-color: white;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   .search {
     width: 50%;
     border-style: none;
@@ -48,7 +56,7 @@ mat-toolbar {
     input {
       background-color: #f1f3f4;
       border-style: none;
-      font-size: large;
+      font-size: medium;
       width: 80%;
       padding: 6px 0px;
     }
