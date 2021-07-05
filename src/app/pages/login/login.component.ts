@@ -31,15 +31,15 @@ export class LoginComponent implements OnInit {
         //this.userservice.login(this.loginForm.value).subscribe(res=>{console.log(res)})
         console.log(this.loginForm.value)
        
-        const headers= new HttpHeaders()
-        .append('content-type', 'application/json')
-        .append('Access-Control-Allow-Origin', '*');
-        this.http
-            .post("https://localhost:44354/api/users/login", this.loginForm.value,{ 'headers': headers })
+        // const headers= new HttpHeaders()
+        // .append('content-type', 'application/json')
+        // .append('Access-Control-Allow-Origin', '*');
+        // this.http
+        //     .post("https://localhost:44354/api/users/login", this.loginForm.value,{ 'headers': headers })
+        //     .subscribe(res=>{console.log(res)})
+            this.http
+            .post("https://localhost:44354/api/users/login", this.loginForm.value)
             .subscribe(res=>{console.log(res)})
-            // this.http
-            // .post("https:localhost/44354/api/users/login", this.loginForm.value)
-            // .subscribe(res=>{console.log(res)})
 
             // this.http
             // .get("http://localhost:3000/users")
