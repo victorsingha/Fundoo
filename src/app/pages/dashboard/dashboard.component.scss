@@ -62,6 +62,10 @@ mat-toolbar {
       padding: 6px 0px;
     }
   }
+  .profilepic:hover {
+    opacity: 70%;
+    cursor: pointer;
+  }
 }
 
 mat-sidenav-container {
