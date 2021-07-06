@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,11 +10,17 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class DashboardComponent implements OnInit {
 
   opened = true;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
   toggleSidebar(){
     this.opened = !this.opened
+  }
+  routeNotes(){
+    this.router.navigateByUrl('/dashboard/notes');
+  }
+  routeTrash(){
+    this.router.navigateByUrl('/dashboard/trash');
   }
 }

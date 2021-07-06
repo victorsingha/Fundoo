@@ -47,7 +47,7 @@
 
   <mat-sidenav-container>
     <mat-sidenav mode="side" [opened]="opened">
-      <div class="link">
+      <div class="link" (click)="routeNotes()">
         <button mat-icon-button>
           <mat-icon>lightbulb_outline</mat-icon>
         </button>
@@ -87,17 +87,16 @@
 
         <p>Archive</p>
       </div>
-      <div>
+      <div (click)="routeTrash()">
         <button mat-icon-button>
           <mat-icon>delete_outline</mat-icon>
         </button>
-
         <p>Trash</p>
       </div>
     </mat-sidenav>
 
     <mat-sidenav-content>
-      Main Content <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
