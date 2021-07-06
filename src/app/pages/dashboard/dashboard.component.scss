@@ -29,6 +29,7 @@ mat-toolbar {
     height: 50px;
   }
   .logo {
+    margin-right: 10px;
     margin-left: 10px;
     display: flex;
     align-items: center;
@@ -57,7 +58,7 @@ mat-toolbar {
       background-color: #f1f3f4;
       border-style: none;
       font-size: medium;
-      width: 80%;
+      width: match-parent;
       padding: 6px 0px;
     }
   }
