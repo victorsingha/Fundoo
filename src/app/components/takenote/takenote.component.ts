@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-takenote',
@@ -11,5 +12,15 @@ export class TakenoteComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  takenote: FormGroup = new FormGroup({
+    title: new FormControl(null),
+    body: new FormControl(null),
+    reminder: new FormControl(null),
+    color: new FormControl(null),
+    isArchived: new FormControl(null),
+    isTrash: new FormControl(null),
+    isPin: new FormControl(null),
+    userId: new FormControl(null)
+  });
 
 }
