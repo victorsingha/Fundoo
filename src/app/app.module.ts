@@ -20,6 +20,7 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatDividerModule } from '@angular/material/divider';
 import { NotesComponent } from './components/notes/notes.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { TakenoteComponent } from './components/takenote/takenote.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { TrashComponent } from './components/trash/trash.component';
     ResetpasswordComponent,
     DashboardComponent,
     NotesComponent,
-    TrashComponent
+    TrashComponent,
+    TakenoteComponent
   ],
   imports: [
     BrowserModule,
