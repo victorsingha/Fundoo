@@ -24,10 +24,14 @@ form {
   .first {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 2px 15px 0px 20px;
     input {
       width: 100%;
     }
+  }
+  .firsttext {
+    display: none;
   }
   .second {
     padding: 2px 20px;
@@ -35,6 +39,9 @@ form {
     input {
       width: 100%;
     }
+  }
+  .secondtext {
+    display: none;
   }
   .third {
     // margin-left: 10px;
