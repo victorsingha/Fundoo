@@ -18,6 +18,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatDividerModule } from '@angular/material/divider';
+import { NotesComponent } from './components/notes/notes.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { MatDividerModule } from '@angular/material/divider';
     LoginComponent,
     ForgotpasswordComponent,
     ResetpasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    NotesComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,

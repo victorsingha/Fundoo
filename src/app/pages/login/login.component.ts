@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   btnLogin(){
     if(this.loginForm.valid){ 
         //this.userservice.login(this.loginForm.value).subscribe(res=>{console.log(res)})
-        this.router.navigateByUrl('/dashboard');
+        this.router.navigateByUrl('/dashboard/notes');
         console.log(this.loginForm.value)
        
         // const headers= new HttpHeaders()
