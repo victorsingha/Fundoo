@@ -12,7 +12,7 @@ export class TakenoteComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  takenote: FormGroup = new FormGroup({
+  noteForm: FormGroup = new FormGroup({
     title: new FormControl(null),
     body: new FormControl(null),
     reminder: new FormControl(null),
@@ -22,5 +22,9 @@ export class TakenoteComponent implements OnInit {
     isPin: new FormControl(null),
     userId: new FormControl(null)
   });
+  close(){
+    console.log("close")
+    console.log(this.noteForm.value)
+  }
 
 }

@@ -10,6 +10,12 @@ textarea:focus,
 select:focus {
   outline: none;
 }
+button {
+  opacity: 80%;
+}
+button:hover {
+  background-color: #f1f3f4;
+}
 
 form {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -36,6 +42,11 @@ form {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .icons {
+      width: 420px;
+      display: flex;
+      justify-content: space-between;
+    }
     .close {
       font-family: "Open Sans", sans-serif;
       font-weight: 600;

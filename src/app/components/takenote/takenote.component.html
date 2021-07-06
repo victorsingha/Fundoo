@@ -1,41 +1,41 @@
-<form>
+<form [formGroup]="noteForm">
   <div class="first">
-    <input type="text" placeholder="Title" />
+    <input type="text" placeholder="Title" formControlName="title" />
     <button mat-icon-button>
-      <mat-icon>verified_user</mat-icon>
+      <mat-icon class="material-icons-outlined">local_offer</mat-icon>
     </button>
   </div>
   <div class="second">
-    <input type="text" placeholder="Take a note..." />
+    <input type="text" placeholder="Take a note..." formControlName="body" />
     <div></div>
   </div>
   <div class="third">
-    <div>
+    <div class="icons">
       <button mat-icon-button>
-        <mat-icon>verified_user</mat-icon>
+        <mat-icon class="material-icons-outlined">notifications_none</mat-icon>
       </button>
       <button mat-icon-button>
-        <mat-icon>verified_user</mat-icon>
+        <mat-icon class="material-icons-outlined">person_add</mat-icon>
       </button>
       <button mat-icon-button>
-        <mat-icon>verified_user</mat-icon>
+        <mat-icon class="material-icons-outlined">color_lens</mat-icon>
       </button>
       <button mat-icon-button>
-        <mat-icon>verified_user</mat-icon>
+        <mat-icon class="material-icons-outlined">insert_photo</mat-icon>
       </button>
       <button mat-icon-button>
-        <mat-icon>verified_user</mat-icon>
+        <mat-icon class="material-icons-outlined">archive_outline</mat-icon>
       </button>
       <button mat-icon-button>
-        <mat-icon>verified_user</mat-icon>
+        <mat-icon class="material-icons-outlined">more_vert</mat-icon>
       </button>
-      <button mat-icon-button>
-        <mat-icon>verified_user</mat-icon>
+      <button mat-icon-button disabled>
+        <mat-icon class="material-icons-outlined">undo</mat-icon>
       </button>
-      <button mat-icon-button>
-        <mat-icon>verified_user</mat-icon>
+      <button mat-icon-button disabled>
+        <mat-icon class="material-icons-outlined">redo</mat-icon>
       </button>
     </div>
-    <button class="close" mat-stroked-button>Close</button>
+    <button class="close" mat-stroked-button (click)="close()">Close</button>
   </div>
 </form>

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  opened = true;
+  opened = false;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
