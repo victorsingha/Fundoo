@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -22,4 +22,8 @@ export class NoteComponent implements OnInit {
     isPin: new FormControl(null),
     userId: new FormControl(null)
   });
+
+  @Input() title: string = "Demo";
+  @Input() body: string = "Demo";
+
 }
