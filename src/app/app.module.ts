@@ -21,6 +21,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { NotesComponent } from './components/notes/notes.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { TakenoteComponent } from './components/takenote/takenote.component';
+import { NoteComponent } from './components/note/note.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { TakenoteComponent } from './components/takenote/takenote.component';
     DashboardComponent,
     NotesComponent,
     TrashComponent,
-    TakenoteComponent
+    TakenoteComponent,
+    NoteComponent
   ],
   imports: [
     BrowserModule,

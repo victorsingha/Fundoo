@@ -19,10 +19,20 @@ button:hover {
 .mat-icon {
   font-size: 20px;
 }
+form:hover {
+  cursor: pointer;
+}
 form {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  //   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-style: solid;
+  border-width: 0.3px;
+  border-color: #cccccc;
   border-radius: 10px;
-  width: 650px;
+  width: 250px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .first {
     display: flex;
     align-items: center;
@@ -30,6 +40,11 @@ form {
     padding: 2px 15px 0px 20px;
     input {
       width: 100%;
+    }
+    .title {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+      font-size: larger;
     }
   }
   .firsttext {
@@ -41,18 +56,22 @@ form {
     input {
       width: 100%;
     }
+    .body {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 600;
+    }
   }
   .secondtext {
     display: none;
   }
   .third {
     // margin-left: 10px;
-    padding: 3px 25px 3px 10px;
+    padding: 3px 15px 3px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     .icons {
-      width: 420px;
+      width: 100%;
       display: flex;
       justify-content: space-between;
     }
