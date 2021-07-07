@@ -4,7 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-note',
   templateUrl: './note.component.html',
-  styleUrls: ['./note.component.scss']
+  styleUrls: ['./note.component.scss'],
 })
 export class NoteComponent implements OnInit {
 

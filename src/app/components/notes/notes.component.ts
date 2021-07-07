@@ -11,5 +11,15 @@ export class NotesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  notes: { title: string, body: string }[] = [
+    { "title": "hello1", "body": "Available1" },
+    { "title": "hello2", "body": "Available2" },
+    { "title": "hello3", "body": "Available3" },
+    { "title": "hello4", "body": "Available4" },
+    { "title": "hello5", "body": "Available5" },
+    { "title": "hello6", "body": "Available6" },
+    { "title": "hello7", "body": "Available7" },
+    { "title": "hello8", "body": "Available8" },
 
+];
 }
