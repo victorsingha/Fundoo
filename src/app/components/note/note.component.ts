@@ -23,7 +23,6 @@ export class NoteComponent implements OnInit {
     userId: new FormControl(null)
   });
 
-  @Input() title: string = "Demo";
-  @Input() body: string = "Demo";
+  @Input() note: any ;
 
 }
