@@ -1,5 +1,5 @@
 <div class="body">
-  <app-takenote></app-takenote>
+  <app-takenote (messageEvent)="receiveMessage($event)"></app-takenote>
   <div class="noteslist">
     <app-note *ngFor="let note of notes" [note]="note"></app-note>
   </div>

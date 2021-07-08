@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./takenote.component.scss']
 })
 export class TakenoteComponent implements OnInit {
-
+  @Output() messageEvent = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit(): void {
@@ -23,8 +23,9 @@ export class TakenoteComponent implements OnInit {
     userId: new FormControl(null)
   });
   close(){
-    console.log("close")
-    console.log(this.noteForm.value)
+    // console.log("close")
+    // console.log(this.noteForm.value)
+    this.messageEvent.emit(this.noteForm.value)
   }
 
 }

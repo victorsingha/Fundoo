@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { TakenoteComponent } from '../takenote/takenote.component';
 
 @Component({
   selector: 'app-notes',
@@ -8,8 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotesComponent implements OnInit {
 
+
   constructor(private http:HttpClient) { }
+  note: any;
+  receiveMessage($event: any) {
+    this.note = $event
+    console.log(this.note)
+    this.notes.push(this.note)
+  }
   // notes:any;
+
   ngOnInit(): void {
     //  this.getAllNotes("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InN1cC5waWNraXR1cEBnbWFpbC5jb20iLCJVc2VySUQiOiIxMCIsIm5iZiI6MTYyNTcxNjg0NCwiZXhwIjoxNjI1NzIwNDQ0LCJpYXQiOjE2MjU3MTY4NDR9.9GVVcrT0v6agm4MU_OrASKBSt3Gq1k7hsrd3bItGIqM")
     //  .subscribe(res=>{
