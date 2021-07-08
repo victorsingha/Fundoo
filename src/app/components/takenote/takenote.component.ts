@@ -16,10 +16,10 @@ export class TakenoteComponent implements OnInit {
     title: new FormControl(null),
     body: new FormControl(null),
     reminder: new FormControl(null),
-    color: new FormControl(null),
-    isArchived: new FormControl(null),
-    isTrash: new FormControl(null),
-    isPin: new FormControl(null),
+    color: new FormControl("#FFFFFF"),
+    isArchived: new FormControl("false"),
+    isTrash: new FormControl("false"),
+    isPin: new FormControl("false"),
     userId: new FormControl(null)
   });
   close(){
