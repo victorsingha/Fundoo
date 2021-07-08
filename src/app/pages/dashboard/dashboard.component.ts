@@ -23,4 +23,7 @@ export class DashboardComponent implements OnInit {
   routeTrash(){
     this.router.navigateByUrl('/dashboard/trash');
   }
+  routeArchive(){
+    this.router.navigateByUrl('/dashboard/archive')
+  }
 }

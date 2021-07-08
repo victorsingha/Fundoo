@@ -22,6 +22,7 @@ import { NotesComponent } from './components/notes/notes.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { TakenoteComponent } from './components/takenote/takenote.component';
 import { NoteComponent } from './components/note/note.component';
+import { ArchiveComponent } from './components/archive/archive.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { NoteComponent } from './components/note/note.component';
     NotesComponent,
     TrashComponent,
     TakenoteComponent,
-    NoteComponent
+    NoteComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,

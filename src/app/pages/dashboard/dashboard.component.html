@@ -81,10 +81,9 @@
         <p>Edit labels</p>
       </div>
       <div>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="routeArchive()">
           <mat-icon class="material-icons-outlined">archive_outline</mat-icon>
         </button>
-
         <p>Archive</p>
       </div>
       <div (click)="routeTrash()">
