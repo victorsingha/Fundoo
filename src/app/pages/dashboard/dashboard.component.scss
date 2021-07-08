@@ -97,5 +97,7 @@ mat-sidenav-container {
 }
 
 mat-sidenav-content {
+  height: 85%;
+  overflow-x: hidden;
   background-color: white;
 }

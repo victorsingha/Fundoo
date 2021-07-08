@@ -1,16 +1,14 @@
 .body {
-  min-height: 100%;
-  overflow: hidden;
-  margin: 20px;
+  // overflow: hidden;
+  app-takenote {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
   display: flex;
   flex-direction: column;
   align-items: center;
   .noteslist {
-    height: auto;
-    overflow: hidden;
-    margin-top: 30px;
-    width: 100%;
-    gap: 50px;
+    gap: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
