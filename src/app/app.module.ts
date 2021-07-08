@@ -23,6 +23,7 @@ import { TrashComponent } from './components/trash/trash.component';
 import { TakenoteComponent } from './components/takenote/takenote.component';
 import { NoteComponent } from './components/note/note.component';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ArchiveComponent } from './components/archive/archive.component';
     HttpClientModule,
     MatToolbarModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

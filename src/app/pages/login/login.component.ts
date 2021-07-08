@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/UserService/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  loading = false;
 
   constructor(private router: Router,private userservice: UserService,private http: HttpClient) {}
   
@@ -25,9 +26,10 @@ export class LoginComponent implements OnInit {
       'Access-Control-Allow-Origin':'*',
     })
   };
-  response:any;
+  response:any = null;
   btnLogin(){
     if(this.loginForm.valid){ 
+      this.loading = true;
         //this.userservice.login(this.loginForm.value).subscribe(res=>{console.log(res)})
         // this.router.navigateByUrl('/dashboard/notes');
         // console.log(this.loginForm.value)
@@ -45,10 +47,12 @@ export class LoginComponent implements OnInit {
               if(this.response.success == true){
                localStorage.setItem("token",this.response.token)
                console.log("Saved Token: ",localStorage.getItem("token"))
+               this.loading = false;
                 this.router.navigateByUrl('/dashboard/notes');
                 console.log("success")            
               }
             },(error)=>{
+              this.loading = false;
               if(error.status == 401){
                 console.log("invalid username or password")
               }
