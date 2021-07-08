@@ -25,12 +25,12 @@ export class LoginComponent implements OnInit {
       'Access-Control-Allow-Origin':'*',
     })
   };
-
+  response:any;
   btnLogin(){
     if(this.loginForm.valid){ 
         //this.userservice.login(this.loginForm.value).subscribe(res=>{console.log(res)})
-        this.router.navigateByUrl('/dashboard/notes');
-        console.log(this.loginForm.value)
+        // this.router.navigateByUrl('/dashboard/notes');
+        // console.log(this.loginForm.value)
        
         // const headers= new HttpHeaders()
         // .append('content-type', 'application/json')
@@ -40,11 +40,20 @@ export class LoginComponent implements OnInit {
         //     .subscribe(res=>{console.log(res)})
             this.http
             .post("https://localhost:44354/api/users/login", this.loginForm.value)
-            .subscribe(res=>{console.log(res)})
-
-            // this.http
-            // .get("http://localhost:3000/users")
-            // .subscribe(res=>{console.log(res)})
+            .subscribe(res=>{        
+              this.response = res
+              if(this.response.success == true){
+               localStorage.setItem("token",this.response.token)
+               console.log("Saved Token: ",localStorage.getItem("token"))
+                // this.router.navigateByUrl('/dashboard/notes');
+                console.log("success")            
+              }
+            },(error)=>{
+              if(error.status == 401){
+                console.log("invalid username or password")
+              }
+            })
+           
       }
     
   }
