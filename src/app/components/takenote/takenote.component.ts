@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-takenote',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class TakenoteComponent implements OnInit {
   @Output() messageEvent = new EventEmitter<any>();
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -44,7 +45,9 @@ export class TakenoteComponent implements OnInit {
                 console.log("fail")
               }
             })
-    // this.messageEvent.emit(this.noteForm.value)
+           
+           
+    //DATA Transfer from TakeNote to Notes
+    this.messageEvent.emit(this.noteForm.value)
   }
-
 }

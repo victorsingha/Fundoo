@@ -11,12 +11,16 @@ export class NotesComponent implements OnInit {
 
 
   constructor(private http:HttpClient) { }
+  
+  //DATA Transfer from TakeNote to Notes
   note: any;
   receiveMessage($event: any) {
     this.note = $event
-    console.log(this.note)
+    // console.log(this.note)
     // this.notes.push(this.note)
+    this.ngOnInit()
   }
+
   notes:any;
   token: any;
   ngOnInit(): void {
