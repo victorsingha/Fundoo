@@ -8,7 +8,7 @@ import { HttpHeaders } from '@angular/common/http';
 export class UserService {
 
   constructor(private httpservice: HttpService) { }
-  static url = "https:localhost/44354/api"
+  static url = "https://localhost/44354/api"
   httpOptions = {
     headers: new HttpHeaders({ 
       'Access-Control-Allow-Origin':'*',
