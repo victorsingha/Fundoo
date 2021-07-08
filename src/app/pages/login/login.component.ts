@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
               if(this.response.success == true){
                localStorage.setItem("token",this.response.token)
                console.log("Saved Token: ",localStorage.getItem("token"))
-                // this.router.navigateByUrl('/dashboard/notes');
+                this.router.navigateByUrl('/dashboard/notes');
                 console.log("success")            
               }
             },(error)=>{
