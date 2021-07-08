@@ -2,7 +2,7 @@
   <app-takenote (messageEvent)="receiveMessage($event)"></app-takenote>
   <div class="noteslist">
     <app-note
-      *ngFor="let note of notes.slice().reverse()"
+      *ngFor="let note of notes?.slice().reverse()"
       [note]="note"
     ></app-note>
   </div>

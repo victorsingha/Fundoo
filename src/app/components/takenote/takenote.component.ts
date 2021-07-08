@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class TakenoteComponent implements OnInit {
   @Output() messageEvent = new EventEmitter<any>();
-  constructor(private http:HttpClient,private router:Router) { }
+  constructor(private http:HttpClient,private router: Router) { }
 noteForm: FormGroup = new FormGroup({});
   ngOnInit(): void {
     this.noteForm = new FormGroup({
@@ -32,8 +32,10 @@ noteForm: FormGroup = new FormGroup({});
     // console.log(this.noteForm?.value)
     if(this.noteForm.value.Title != null && this.noteForm.value.Body != null)
     {
-      this.addNote()
-      this.ngOnInit()
+      if(this.noteForm.value.Title.trim() != "" && this.noteForm.value.Body.trim() != "")
+      {
+        this.addNote();
+      }
     }
             
     //DATA Transfer from TakeNote to Notes
@@ -49,7 +51,8 @@ noteForm: FormGroup = new FormGroup({});
             .subscribe(res=>{        
               this.response = res
               if(this.response.success == true){         
-                console.log("Note Inserted")        
+                console.log("Note Inserted") 
+                this.reloadCurrentRoute();       
               }
             },(error)=>{
               console.log(error)
@@ -58,4 +61,11 @@ noteForm: FormGroup = new FormGroup({});
               }
             })          
   }
+
+  reloadCurrentRoute() {
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([currentUrl]);
+    });
+}
 }

@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
-import { TakenoteComponent } from '../takenote/takenote.component';
 
 @Component({
   selector: 'app-notes',
@@ -18,7 +17,6 @@ export class NotesComponent implements OnInit {
     this.note = $event
     // console.log(this.note)
     // this.notes.push(this.note)
-    this.ngOnInit()
   }
 
 

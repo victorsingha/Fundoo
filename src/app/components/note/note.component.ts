@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-note',
@@ -9,7 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class NoteComponent implements OnInit {
   @Input() note: any ;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -29,7 +30,7 @@ export class NoteComponent implements OnInit {
     console.log(this.note.notesId)
     this.deleteNote();
   }
-  
+
   token:any;
   response:any;
   deleteNote(){
@@ -41,10 +42,17 @@ export class NoteComponent implements OnInit {
               .subscribe(res=>{        
                 this.response = res
                 if(this.response.success == true){         
-                  console.log("Note Deleted")        
+                  console.log("Note Deleted") 
+                  this.reloadCurrentRoute();       
                 }
               },(error)=>{
                 console.log(error)
               })          
   }
+  reloadCurrentRoute() {
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([currentUrl]);
+    });
+}
 }
