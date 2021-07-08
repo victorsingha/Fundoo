@@ -26,7 +26,7 @@ export class NotesComponent implements OnInit {
     //    this.notes = res;
     //   })
   }
-  notes: { title: string, body: string }[] = [
+  notes = [
     { "title": "hello111 111111111111111 222222222 3333333333333", "body": "Available1" },
     { "title": "hello2", "body": "Available2" },
     { "title": "hello3", "body": "Take the bag of rice and send to Ben. Take the bag of rice and send to Ben." },
