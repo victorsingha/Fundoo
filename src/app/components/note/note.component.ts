@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -7,8 +8,8 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./note.component.scss'],
 })
 export class NoteComponent implements OnInit {
-
-  constructor() { }
+  @Input() note: any ;
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +24,27 @@ export class NoteComponent implements OnInit {
     userId: new FormControl(null)
   });
 
-  @Input() note: any ;
-
+  
+  archive(){
+    console.log(this.note.notesId)
+    this.deleteNote();
+  }
+  
+  token:any;
+  response:any;
+  deleteNote(){
+      this.token = localStorage.getItem("token");
+      const headers= new HttpHeaders()
+      .append('Authorization',`Bearer ${this.token}`);
+      this.http
+              .delete(`https://localhost:44354/api/notes/delete/${this.note.notesId}`,{ 'headers': headers })
+              .subscribe(res=>{        
+                this.response = res
+                if(this.response.success == true){         
+                  console.log("Note Deleted")        
+                }
+              },(error)=>{
+                console.log(error)
+              })          
+  }
 }

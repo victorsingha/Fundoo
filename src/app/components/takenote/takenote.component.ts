@@ -11,29 +11,41 @@ import { Router } from '@angular/router';
 export class TakenoteComponent implements OnInit {
   @Output() messageEvent = new EventEmitter<any>();
   constructor(private http:HttpClient,private router:Router) { }
-
+noteForm: FormGroup = new FormGroup({});
   ngOnInit(): void {
+    this.noteForm = new FormGroup({
+      Title: new FormControl(null),
+      Body: new FormControl(null),
+      Reminder: new FormControl("default"),
+      Color: new FormControl("#FFFFFF"),
+      isArchived: new FormControl(false),
+      isTrash: new FormControl(false),
+      isPin: new FormControl(false),
+      UserId: new FormControl(0)
+    });
   }
-  noteForm: FormGroup = new FormGroup({
-    Title: new FormControl(null),
-    Body: new FormControl(null),
-    Reminder: new FormControl("default"),
-    Color: new FormControl("#FFFFFF"),
-    isArchived: new FormControl(false),
-    isTrash: new FormControl(false),
-    isPin: new FormControl(false),
-    UserId: new FormControl(0)
-  });
+  
   response:any;
   token:any;
   
   close(){
-    console.log(this.noteForm.value)
+    // console.log(this.noteForm?.value)
+    if(this.noteForm.value.Title != null && this.noteForm.value.Body != null)
+    {
+      this.addNote()
+      this.ngOnInit()
+    }
+            
+    //DATA Transfer from TakeNote to Notes
+    this.messageEvent.emit(this.noteForm?.value)
+  }
+
+  addNote(){
     this.token = localStorage.getItem("token");
     const headers= new HttpHeaders()
     .append('Authorization',`Bearer ${this.token}`);
     this.http
-            .post("https://localhost:44354/api/notes/add", this.noteForm.value,{ 'headers': headers })
+            .post("https://localhost:44354/api/notes/add", this.noteForm?.value,{ 'headers': headers })
             .subscribe(res=>{        
               this.response = res
               if(this.response.success == true){         
@@ -44,10 +56,6 @@ export class TakenoteComponent implements OnInit {
               if(error.status == 401){
                 console.log("fail")
               }
-            })
-           
-           
-    //DATA Transfer from TakeNote to Notes
-    this.messageEvent.emit(this.noteForm.value)
+            })          
   }
 }
