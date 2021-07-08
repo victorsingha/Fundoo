@@ -21,15 +21,9 @@ export class NotesComponent implements OnInit {
     this.ngOnInit()
   }
 
-  notes:any;
-  token: any;
+
   ngOnInit(): void {
-    this.token = localStorage.getItem("token");
-    this.getAllNotes(this.token)
-    .subscribe(res=>{
-      console.log(res);
-      this.notes = res;
-    })
+    this.getAllNotes();
   }
 //   notes = [
 //     { "title": "hello111 111111111111111 222222222 3333333333333", "body": "Available1" },
@@ -42,13 +36,19 @@ export class NotesComponent implements OnInit {
 //     { "title": "hello8", "body": "Available8" },
 // ];
 
-
-getAllNotes(auth_token:string | null){
+notes:any;
+token: any;
+getAllNotes(){
+  this.token = localStorage.getItem("token");
   const headers= new HttpHeaders()
   .append('content-type', 'application/json')
   .append('Access-Control-Allow-Origin', '*')
-  .append('Authorization',`Bearer ${auth_token}`);
-  return this.http
-      .get("https://localhost:44354/api/notes/list",{ 'headers': headers })  
+  .append('Authorization',`Bearer ${this.token}`);
+  this.http
+      .get("https://localhost:44354/api/notes/list",{ 'headers': headers })
+      .subscribe(res=>{
+        console.log(res);
+        this.notes = res;
+      })  
 }
 }
