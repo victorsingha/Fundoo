@@ -26,4 +26,8 @@ export class DashboardComponent implements OnInit {
   routeArchive(){
     this.router.navigateByUrl('/dashboard/archive')
   }
+  logout(){
+    localStorage.clear();
+    this.router.navigateByUrl('/login')
+  }
 }
