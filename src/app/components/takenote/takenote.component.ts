@@ -39,7 +39,7 @@ noteForm: FormGroup = new FormGroup({});
     }
             
     //DATA Transfer from TakeNote to Notes
-    this.messageEvent.emit(this.noteForm?.value)
+    // this.messageEvent.emit(this.noteForm?.value)
   }
 
   addNote(){

@@ -14,7 +14,7 @@ export class NotesComponent implements OnInit {
   //DATA Transfer from TakeNote to Notes
   note: any;
   receiveMessage($event: any) {
-    this.note = $event
+    // this.note = $event
     // console.log(this.note)
     // this.notes.push(this.note)
   }
