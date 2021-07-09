@@ -1,3 +1,10 @@
+app-colors {
+  z-index: 10;
+  position: relative;
+  bottom: 95px;
+  left: 10px;
+}
+
 input {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
@@ -32,6 +39,7 @@ form:hover {
 
 form {
   //   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  // position: relative;
   border-style: solid;
   border-width: 0.3px;
   border-color: #cccccc;

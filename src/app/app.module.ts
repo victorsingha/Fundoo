@@ -24,6 +24,7 @@ import { TakenoteComponent } from './components/takenote/takenote.component';
 import { NoteComponent } from './components/note/note.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ColorsComponent } from './components/colors/colors.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     TrashComponent,
     TakenoteComponent,
     NoteComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    ColorsComponent
   ],
   imports: [
     BrowserModule,

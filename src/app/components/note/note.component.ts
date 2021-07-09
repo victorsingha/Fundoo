@@ -55,4 +55,9 @@ export class NoteComponent implements OnInit {
         this.router.navigate([currentUrl]);
     });
 }
+opened = false;
+toggleColorPallete(){
+  this.opened = !this.opened
+}
+
 }
