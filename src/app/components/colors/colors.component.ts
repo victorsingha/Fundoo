@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-colors',
@@ -24,4 +24,10 @@ export class ColorsComponent implements OnInit {
   "#fdcfe8",
   "#e6c9a8",
   "#e8eaed"]
+
+  @Output() messageEvent = new EventEmitter<string>();
+  sendColor(color:any){
+    this.messageEvent.emit(color)
+    // console.log(color)
+  }
 }

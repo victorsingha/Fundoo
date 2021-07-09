@@ -14,5 +14,6 @@
   <div
     *ngFor="let color of colors"
     [ngStyle]="{ 'background-color': color }"
+    (click)="sendColor(color)"
   ></div>
 </div>

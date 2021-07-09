@@ -60,4 +60,11 @@ toggleColorPallete(){
   this.opened = !this.opened
 }
 
+color:any;
+
+  receiveMessage($event: any) {
+    this.color = $event
+    console.log(this.color)
+  }
+
 }
