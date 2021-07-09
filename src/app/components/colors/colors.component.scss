@@ -1,8 +1,20 @@
 .body {
-  width: 100px;
+  padding: 2px;
+  border-radius: 5px;
+  width: 120px;
   height: 100px;
   background-color: greenyellow;
   opacity: 50%;
   //   right: 100px;
   position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.body > div {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: black;
 }
