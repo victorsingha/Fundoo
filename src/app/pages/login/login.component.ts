@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/UserService/user.service';
 
@@ -12,7 +13,7 @@ import { UserService } from 'src/app/services/UserService/user.service';
 export class LoginComponent implements OnInit {
   loading = false;
 
-  constructor(private router: Router,private userservice: UserService,private http: HttpClient) {}
+  constructor(private router: Router,private userservice: UserService,private http: HttpClient,private _snackBar: MatSnackBar) {}
   
   btnForgotPassword(){
     this.router.navigateByUrl('/forgotpassword');
@@ -53,6 +54,7 @@ export class LoginComponent implements OnInit {
               }
             },(error)=>{
               this.loading = false;
+              this._snackBar.open('Wrong Credentials!','ok',{ duration: 3000 });
               if(error.status == 401){
                 console.log("invalid username or password")
               }

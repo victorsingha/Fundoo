@@ -25,6 +25,7 @@ import { NoteComponent } from './components/note/note.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ColorsComponent } from './components/colors/colors.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { ColorsComponent } from './components/colors/colors.component';
     MatToolbarModule,
     MatSidenavModule,
     MatDividerModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
