@@ -60,8 +60,8 @@ toggleColorPallete(){
   this.opened = !this.opened
 }
 
+// bgColor : string = 'white';
 color:any;
-
   receiveMessage($event: any) {
     this.color = $event
     console.log(this.color)

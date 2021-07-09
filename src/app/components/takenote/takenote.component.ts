@@ -17,7 +17,7 @@ noteForm: FormGroup = new FormGroup({});
       Title: new FormControl(null),
       Body: new FormControl(null),
       Reminder: new FormControl("default"),
-      Color: new FormControl("#FFFFFF"),
+      Color: new FormControl("white"),
       isArchived: new FormControl(false),
       isTrash: new FormControl(false),
       isPin: new FormControl(false),

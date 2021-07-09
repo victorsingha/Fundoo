@@ -1,4 +1,4 @@
-<form [formGroup]="noteForm">
+<form [formGroup]="noteForm" [ngStyle]="{ 'background-color': note.color }">
   <div class="first">
     <div class="title">{{ note.title }}</div>
     <button mat-icon-button class="icons push_pin">

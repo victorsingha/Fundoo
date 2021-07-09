@@ -23,18 +23,18 @@ export class NotesComponent implements OnInit {
   ngOnInit(): void {
     this.getAllNotes();
   }
-  notes = [
-    { "title": "hello111 111111111111111 222222222 3333333333333", "body": "Available1" },
-    { "title": "hello2", "body": "Available2" },
-    { "title": "hello3", "body": "Take the bag of rice and send to Ben. Take the bag of rice and send to Ben." },
-    { "title": "hello4", "body": "Available4" },
-    { "title": "hello5", "body": "Available5" },
-    { "title": "hello6", "body": "Take the bag of rice and send to Ben. Take the bag of rice and send to Ben.Take the bag of rice and send to Ben. Take the bag of rice and send to Ben." },
-    { "title": "hello7", "body": "Available7" },
-    { "title": "hello8", "body": "Available8" },
-];
+//   notes = [
+//     { "title": "hello111 111111111111111 222222222 3333333333333", "body": "Available1" },
+//     { "title": "hello2", "body": "Available2" },
+//     { "title": "hello3", "body": "Take the bag of rice and send to Ben. Take the bag of rice and send to Ben." },
+//     { "title": "hello4", "body": "Available4" },
+//     { "title": "hello5", "body": "Available5" },
+//     { "title": "hello6", "body": "Take the bag of rice and send to Ben. Take the bag of rice and send to Ben.Take the bag of rice and send to Ben. Take the bag of rice and send to Ben." },
+//     { "title": "hello7", "body": "Available7" },
+//     { "title": "hello8", "body": "Available8" },
+// ];
 
-// notes:any;
+notes:any;
 token: any;
 getAllNotes(){
   this.token = localStorage.getItem("token");
@@ -46,7 +46,7 @@ getAllNotes(){
       .get("https://localhost:44354/api/notes/list",{ 'headers': headers })
       .subscribe(res=>{
         console.log(res);
-        // this.notes = res;
+        this.notes = res;
       })  
 }
 }
