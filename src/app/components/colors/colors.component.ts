@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,22 +27,23 @@ export class ColorsComponent implements OnInit {
   "#e6c9a8",
   "#e8eaed"]
 
+  @Input() notesId: any;
   @Output() messageEvent = new EventEmitter<string>();
   sendColor(color:any){
     this.messageEvent.emit(color)
-    // console.log(color)
-    this.updateColor(color)
+    console.log(this.notesId)
+    this.updateColor(color,this.notesId)
   }
 
-
+  
   response:any;
   token:any;
-  updateColor(color:any){
+  updateColor(color:any,notesId: number){
     this.token = localStorage.getItem("token");
     const headers= new HttpHeaders()
     .append('Authorization',`Bearer ${this.token}`);
     this.http
-            .put(`https://localhost:44354/api/notes/color/64`, { Color:`${color}` },{ 'headers': headers })
+            .put(`https://localhost:44354/api/notes/color/${notesId}`, { Color:`${color}` },{ 'headers': headers })
             .subscribe(res=>{        
               this.response = res
               if(this.response.success == true){         

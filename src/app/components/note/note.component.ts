@@ -64,7 +64,7 @@ toggleColorPallete(){
 color:any;
   receiveMessage($event: any) {
     this.color = $event
-    console.log(this.color)
+    // console.log(this.color)
   }
 
 }
