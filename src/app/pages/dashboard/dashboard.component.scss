@@ -101,3 +101,19 @@ mat-sidenav-content {
   overflow-x: hidden;
   background-color: white;
 }
+
+@media screen and (max-width: 815px) {
+  mat-toolbar {
+    .searchbar {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  mat-toolbar {
+    .three > button {
+      display: none;
+    }
+  }
+}
