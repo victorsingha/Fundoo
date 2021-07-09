@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, ValidationErrors, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core/error/error-options';
@@ -25,7 +26,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class RegisterComponent implements OnInit {
   
   matcher = new MyErrorStateMatcher();
-  constructor(private router: Router,private userservice: UserService,private formBuilder: FormBuilder) {}
+  constructor(private router: Router,private userservice: UserService,private formBuilder: FormBuilder,private http:HttpClient) {}
 
   btnSignin() {
     this.router.navigateByUrl('/login');
@@ -37,7 +38,13 @@ export class RegisterComponent implements OnInit {
       console.log(this.registerForm.value)
       // TODO 
       // this.userservice.registration(this.registerForm.value).subscribe(data=>{console.log(data)})
-    
+      const body = { 
+        FirstName: this.registerForm.value.firstname,
+        LastName:this.registerForm.value.lasttname,
+        Email: this.registerForm.value.email,
+        Password: this.registerForm.value.password
+      }
+      this.registerUser(body);
     }
   }
   
@@ -57,6 +64,26 @@ export class RegisterComponent implements OnInit {
     const pass = control.get('password')?.value;
     const confirmPass = control.get('confirmpassword')?.value;
     return pass === confirmPass ? null : { notSame: true }     
+  }
+  loading = false;
+  response:any;
+  registerUser(body:any){
+    this.loading=true;
+    this.http.post("https://localhost:44354/api/users/register",body)
+    .subscribe(res=>{        
+      this.response = res
+      if(this.response.success == true){
+       this.loading = false;
+        this.router.navigateByUrl('/login');
+        console.log("success")            
+      }
+    },(error)=>{
+      this.loading = false;
+      if(error.status == 401){
+        console.log("invalid username or password")
+      }
+    })
+
   }
 
 }
