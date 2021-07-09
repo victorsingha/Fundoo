@@ -1,14 +1,18 @@
 <div class="body">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+  <!-- <div id="white" value="white" id="white"></div>
+  <div id="red" value="#f28b82"></div>
+  <div id="orange" value="#fbbc04"></div>
+  <div id="yellow" value="#fff475"></div>
+  <div id="green" value="#ccff90"></div>
+  <div id="cyan" value="#a7ffeb"></div>
+  <div id="lightblue" value="#cbf0f8"></div>
+  <div id="darkblue" value="#aecbfa"></div>
+  <div id="purple" value="#d7aefb"></div>
+  <div id="" value="#fdcfe8"></div>
+  <div id="" value="#e6c9a8"></div>
+  <div id="" value="#e8eaed"></div> -->
+  <div
+    *ngFor="let color of colors"
+    [ngStyle]="{ 'background-color': color }"
+  ></div>
 </div>
