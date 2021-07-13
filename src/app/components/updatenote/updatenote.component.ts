@@ -13,7 +13,8 @@ export class UpdatenoteComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onNoClick(): void {
+  close(){
+    console.log("close-dialog")
     this.dialogRef.close();
   }
 }
