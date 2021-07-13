@@ -1,16 +1,12 @@
-<form
-  (click)="openDialog()"
-  [formGroup]="noteForm"
-  [ngStyle]="{ 'background-color': note.color }"
->
-  <div class="first">
+<form [formGroup]="noteForm" [ngStyle]="{ 'background-color': note.color }">
+  <div class="first" (click)="openDialog()">
     <div class="title">{{ note.title }}</div>
     <button mat-icon-button class="icons push_pin">
       <mat-icon class="material-icons-outlined">push_pin</mat-icon>
     </button>
   </div>
 
-  <div class="second">
+  <div class="second" (click)="openDialog()">
     <div class="body">{{ note.body }}</div>
     <div></div>
   </div>
