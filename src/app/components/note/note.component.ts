@@ -70,9 +70,11 @@ color:any;
   }
 
   openDialog(): void {
+    // console.log(note)
     const dialogRef = this.dialog.open(UpdatenoteComponent, {
       // width: '250px',
       // data: {name: this.name, animal: this.animal}
+      data: this.note
     });
 
     dialogRef.afterClosed().subscribe(result => {
