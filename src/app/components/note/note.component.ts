@@ -1,7 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 
 @Component({
   selector: 'app-note',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class NoteComponent implements OnInit {
   @Input() note: any ;
-  constructor(private http:HttpClient,private router: Router) { }
+  constructor(private http:HttpClient,private router: Router,public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -65,6 +67,18 @@ color:any;
   receiveMessage($event: any) {
     this.color = $event
     // console.log(this.color)
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(UpdatenoteComponent, {
+      // width: '250px',
+      // data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
   }
 
 }

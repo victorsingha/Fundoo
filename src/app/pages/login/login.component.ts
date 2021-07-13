@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
               }
             },(error)=>{
               this.loading = false;
-              this._snackBar.open('Wrong Credentials!','ok',{ duration: 3000 });
+              this._snackBar.open('Wrong Credentials!','OK',{ duration: 3000 });
               if(error.status == 401){
                 console.log("invalid username or password")
               }

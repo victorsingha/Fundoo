@@ -26,6 +26,9 @@ import { ArchiveComponent } from './components/archive/archive.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ColorsComponent } from './components/colors/colors.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -41,7 +44,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     TakenoteComponent,
     NoteComponent,
     ArchiveComponent,
-    ColorsComponent
+    ColorsComponent,
+    UpdatenoteComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSidenavModule,
     MatDividerModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
