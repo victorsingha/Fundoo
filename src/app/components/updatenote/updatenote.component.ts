@@ -15,6 +15,7 @@ export class UpdatenoteComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.data)
     this.updateForm = new FormGroup({
+      NotesId:new FormControl(this.data.notesId),
       Title: new FormControl(this.data.title),
       Body: new FormControl(this.data.body),
       Reminder: new FormControl("default"),
