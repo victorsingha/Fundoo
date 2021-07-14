@@ -1,6 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-updatenote',
@@ -9,7 +11,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 })
 export class UpdatenoteComponent implements OnInit {
 
-  constructor( public dialogRef: MatDialogRef<UpdatenoteComponent>,
+  constructor(private router: Router,private http: HttpClient, public dialogRef: MatDialogRef<UpdatenoteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
     updateForm: FormGroup = new FormGroup({});
   ngOnInit(): void {
@@ -27,7 +29,55 @@ export class UpdatenoteComponent implements OnInit {
     });
   }
   close(){
-    console.log("close-dialog")
+    // console.log("close-dialog")
+    this.updateTitle(this.updateForm.value.Title,this.data.notesId)
+    this.updateBody(this.updateForm.value.Body,this.data.notesId)
     this.dialogRef.close();
   }
+  response:any;
+  token:any;
+  updateTitle(title:any,notesId: number){
+    this.token = localStorage.getItem("token");
+    const headers= new HttpHeaders()
+    .append('Authorization',`Bearer ${this.token}`);
+    this.http
+            .put(`https://localhost:44354/api/notes/title/${notesId}`, { Title:`${title}` },{ 'headers': headers })
+            .subscribe(res=>{        
+              this.response = res
+              if(this.response.success == true){         
+                console.log("Color Updated") 
+                this.reloadCurrentRoute();       
+              }
+            },(error)=>{
+              console.log(error)
+              if(error.status == 401){
+                console.log("fail")
+              }
+            })          
+  }
+  updateBody(body:any,notesId: number){
+    this.token = localStorage.getItem("token");
+    const headers= new HttpHeaders()
+    .append('Authorization',`Bearer ${this.token}`);
+    this.http
+            .put(`https://localhost:44354/api/notes/body/${notesId}`, { Body:`${body}` },{ 'headers': headers })
+            .subscribe(res=>{        
+              this.response = res
+              if(this.response.success == true){         
+                console.log("Color Updated") 
+                this.reloadCurrentRoute();       
+              }
+            },(error)=>{
+              console.log(error)
+              if(error.status == 401){
+                console.log("fail")
+              }
+            })          
+  }
+  reloadCurrentRoute() {
+    let currentUrl = this.router.url;
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.router.navigate([currentUrl]);
+    });
+}
 }
