@@ -8,19 +8,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `register`
 
-![register](http://url/to/img.png)
+![register](https://github.com/victorsingha/Fundoo/blob/main/screenshots/register.JPG?raw=true)
 
 `forgotpassword`
 
-![forgotpassword](https://raw.githubusercontent.com/victorsingha/Fundoo/main/screenshots/forgotpassword.JPG)
+![forgotpassword](https://github.com/victorsingha/Fundoo/blob/main/screenshots/forgotpassword.JPG?raw=true)
 
 `home`
 
-![home](https://raw.githubusercontent.com/victorsingha/Fundoo/main/screenshots/home.JPG)
+![home](https://github.com/victorsingha/Fundoo/blob/main/screenshots/home.JPG?raw=true)
 
 `updatenote`
 
-![updatenote](http://url/to/img.png)
+![updatenote](https://github.com/victorsingha/Fundoo/blob/main/screenshots/update.JPG?raw=true)
 
 ## Development server
 
