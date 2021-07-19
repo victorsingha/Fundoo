@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `login`
 
-![login](https://raw.githubusercontent.com/victorsingha/Fundoo/main/screenshots/login.JPG)
+![login](https://github.com/victorsingha/Fundoo/blob/main/screenshots/login.jpg?raw=true)
 
 `register`
 
@@ -12,11 +12,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `forgotpassword`
 
-![forgotpassword](http://url/to/img.png)
+![forgotpassword](https://raw.githubusercontent.com/victorsingha/Fundoo/main/screenshots/forgotpassword.JPG)
 
 `home`
 
-![home](http://url/to/img.png)
+![home](https://raw.githubusercontent.com/victorsingha/Fundoo/main/screenshots/home.JPG)
 
 `updatenote`
 
