@@ -2,6 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
 
+`login`
+
+![login](https://raw.githubusercontent.com/victorsingha/Fundoo/main/screenshots/login.JPG)
+
+`register`
+
+![register](http://url/to/img.png)
+
+`forgotpassword`
+
+![forgotpassword](http://url/to/img.png)
+
+`home`
+
+![home](http://url/to/img.png)
+
+`updatenote`
+
+![updatenote](http://url/to/img.png)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
