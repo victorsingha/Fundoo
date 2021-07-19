@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `login`
 
-![login](https://github.com/victorsingha/Fundoo/blob/main/screenshots/login.jpg?raw=true)
+![login](https://github.com/victorsingha/Fundoo/blob/main/screenshots/login.JPG?raw=true)
 
 `register`
 
